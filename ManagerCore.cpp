@@ -10,4 +10,7 @@ void startMarsManager () {
   cout << "Queuing up intial tasks" << endl;
   startTaskQ();
 
+  /*while(true) {
+    tick();
+  }*/
 }
