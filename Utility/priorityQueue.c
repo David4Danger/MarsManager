@@ -46,7 +46,7 @@ void pq_insert (priority_queue_t *pq,
   pq->len += 1;
 }
 
-int pq_deleteMax (priority_queue_t *pq)
+marsTask pq_deleteMax (priority_queue_t *pq)
 /**************************************************************/
 /*                                                            */
 /* pq_deleteMax: See header                                   */
@@ -63,7 +63,7 @@ int pq_deleteMax (priority_queue_t *pq)
     return 0;
   }
 
-  int max = pq->nodes[1].priority;
+  marsTask max = pq->nodes[1].data;
   pq->nodes[1] = pq->nodes[pq->len];//move last node to top of the heap
   pq->len -= 1;
 
@@ -96,7 +96,7 @@ void samplefunc () {
   ;
 }
 
-int main () {
+/*int main () {
   priority_queue_t *taskQ = (priority_queue_t*)calloc(1,sizeof(priority_queue_t));
   taskQ->len = 0;
   taskQ->maxNodes = 0;
@@ -121,4 +121,4 @@ int main () {
     printf("\n");
   }
   return 0;
-}
+}*/

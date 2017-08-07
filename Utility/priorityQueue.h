@@ -48,7 +48,7 @@ void pq_insert (priority_queue_t *pq,
 /**************************************************************/
 
 
-int pq_deleteMax (priority_queue_t *pq);
+marsTask pq_deleteMax (priority_queue_t *pq);
 /**************************************************************/
 /*                                                            */
 /* pq_deleteMax: Removes the highest priority task from the   */

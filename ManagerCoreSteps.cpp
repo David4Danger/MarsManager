@@ -4,6 +4,7 @@
 #include <time.h>
 #include "ManagerCoreSteps.h"
 #include "planets.h"
+#include "tasks.h"
 using namespace std;
 
 priority_queue_t *marsTaskQ;
@@ -29,5 +30,9 @@ void startTaskQ () {
 }
 
 void tick () {
-  ;
+  marsTask currentT;
+
+  pq_insert(marsTaskQ, 50, &dailyInventoryReport);
+  currentT = pq_deleteMax(marsTaskQ);
+  currentT();
 }
