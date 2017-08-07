@@ -9,15 +9,7 @@
 #endif
 #include "Utility/priorityQueue.h"
 
-struct marsInventory {
-  int oxygen, hydrogen;//measured in kg
-  int food, water;//measured in kg
-  //Add more resources later (metals, etc), start with necessities
-  marsInventory();
-};
-
 extern priority_queue_t *marsTaskQ;
-extern marsInventory marsInv;
 
 /**************************************************************/
 /*                                                            */

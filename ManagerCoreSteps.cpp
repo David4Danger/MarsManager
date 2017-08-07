@@ -3,23 +3,23 @@
 #include <stdio.h>
 #include <time.h>
 #include "ManagerCoreSteps.h"
+#include "planets.h"
 using namespace std;
 
 priority_queue_t *marsTaskQ;
-marsInventory marsInv;
-
-marsInventory::marsInventory() {
-  oxygen = hydrogen = water = food = 0;
-}
+solarSystem sol;
 
 void setStartingVariables () {
   srand(time(NULL));
 
-  //Start with 100 to 200kg of oxygen, water, food and 0 to 50kg of hydrogen
-  marsInv.oxygen = (rand() % 100) + 100;
-  marsInv.water = (rand() % 100) + 100;
-  marsInv.food = (rand() % 100) + 100;
-  marsInv.hydrogen = rand() % 50;
+  /* Start with 100 to 200kg of oxygen, water, food and 0 to 50kg of hydrogen */
+  sol.mars.inventory.oxygen = (rand() % 100) + 100;
+  sol.mars.inventory.water = (rand() % 100) + 100;
+  sol.mars.inventory.food = (rand() % 100) + 100;
+  sol.mars.inventory.hydrogen = rand() % 50;
+
+  /* Randomly decide the time between Earth and Mars, 3 to 22s */
+  sol.messageDelay = (rand() % 19) + 3;
 }
 
 void startTaskQ () {
