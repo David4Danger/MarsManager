@@ -23,3 +23,32 @@
 /*                                                            */
 /**************************************************************/
 void dailyInventoryReport();
+
+
+/**************************************************************/
+/*                                                            */
+/* sendEarthConfirmation: Send a confirmation message based   */
+/* messageDelay argument in solarSystem obj, delay can be     */
+/* 3 to 22 tick delay (3 to 22 minute delay like real life)   */
+/*                                                            */
+/* Params:                                                    */
+/*    None                                                    */
+/*                                                            */
+/* Returns: Nothing                                           */
+/*                                                            */
+/**************************************************************/
+void sendEarthConfirmation();
+
+/**************************************************************/
+/*                                                            */
+/* sendMarsConfirmation: Send a confirmation message based    */
+/* messageDelay argument in solarSystem obj, delay can be     */
+/* 3 to 22 tick delay (3 to 22 minute delay like real life)   */
+/*                                                            */
+/* Params:                                                    */
+/*    None                                                    */
+/*                                                            */
+/* Returns: Nothing                                           */
+/*                                                            */
+/**************************************************************/
+void sendMarsConfirmation();

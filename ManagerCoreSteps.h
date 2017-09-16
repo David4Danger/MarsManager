@@ -10,6 +10,7 @@
 #include "Utility/priorityQueue.h"
 
 extern priority_queue_t *marsTaskQ;
+static const int maxthreads = 10;
 
 /**************************************************************/
 /*                                                            */

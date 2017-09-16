@@ -1,7 +1,9 @@
 #include <iostream>
+#include <thread>
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
+#include "printer/printer.h"
 #include "ManagerCoreSteps.h"
 #include "planets.h"
 #include "tasks.h"
@@ -19,7 +21,7 @@ void setStartingVariables () {
   sol.mars.inventory.food = (rand() % 100) + 100;
   sol.mars.inventory.hydrogen = rand() % 50;
 
-  /* Randomly decide the time between Earth and Mars, 3 to 22s */
+  /* Randomly decide the time between Earth and Mars, 3 to 22 minutes */
   sol.messageDelay = (rand() % 19) + 3;
 }
 
@@ -29,10 +31,24 @@ void startTaskQ () {
   marsTaskQ->maxNodes = 0;
 }
 
+//compiler flags for threads: -std=c++0x -pthread
+
 void tick () {
-  marsTask currentT;
+  //marsTask currentT;
+  thread t[maxthreads];
 
   pq_insert(marsTaskQ, 50, &dailyInventoryReport);
-  currentT = pq_deleteMax(marsTaskQ);
-  currentT();
+  pq_insert(marsTaskQ, 55, &sendEarthConfirmation);
+  pq_insert(marsTaskQ, 56, &sendMarsConfirmation);
+  for (int i = 0; i < 3; ++i) {
+    t[i] = thread(pq_deleteMax(marsTaskQ));
+  }
+
+  for (int i = 0; i < 3; ++i) {
+    t[i].join();//Join thread to execution
+  }
+
+  safePrint(
+  "-----------------------------------------------\n"
+  );
 }
