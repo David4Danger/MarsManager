@@ -22,6 +22,8 @@ public:
 };
 
 struct solarSystem {
+  /* messageDelay is measured in minutes. Will eventually make this value 
+     dynamic, although it'll take a lot of ticks to change. */
   int messageDelay;
   marsColony mars;
   earthHome earth;
