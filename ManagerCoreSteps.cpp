@@ -34,7 +34,6 @@ void startTaskQ () {
 //compiler flags for threads: -std=c++0x -pthread
 
 void tick () {
-  //marsTask currentT;
   thread t[maxthreads];
 
   pq_insert(marsTaskQ, 50, &dailyInventoryReport);
