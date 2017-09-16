@@ -7,7 +7,10 @@
 #ifndef ManagerCoreSteps_h_
 #define ManagerCoreSteps_h_
 #endif
-#include "Utility/priorityQueue.h"
+
+extern "C" {
+  #include "Utility/priorityQueue.h"
+}
 
 extern priority_queue_t *marsTaskQ;
 static const int maxthreads = 10;
