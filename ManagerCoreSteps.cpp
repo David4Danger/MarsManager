@@ -31,8 +31,6 @@ void startTaskQ () {
   marsTaskQ->maxNodes = 0;
 }
 
-//compiler flags for threads: -std=c++0x -pthread
-
 void tick () {
   thread t[maxthreads];
 
